@@ -1,0 +1,14 @@
+.app {
+  text-align: center;
+  padding: 20px;
+  font-family: sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1e40af;
+}
