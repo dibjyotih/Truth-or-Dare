@@ -11,27 +11,18 @@
   height: 400px;
   border: 2px dashed #ccc;
   border-radius: 50%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .player {
   position: absolute;
-  transform: translate(-50%, -50%);
-  background: #f2f2f2;
-  padding: 8px 12px;
-  border-radius: 10px;
+  background-color: #f9f9f9;
+  padding: 5px 10px;
+  border-radius: 8px;
   font-weight: bold;
   text-align: center;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-}
-
-.bottle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80px;
-  transform: translate(-50%, -50%) rotate(0deg);
-  transition: transform 2s ease-out;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
 }
 
 .spin-button {
@@ -46,4 +37,14 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.result {
+  position: absolute;
+  bottom: -110px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e3a8a;
 }

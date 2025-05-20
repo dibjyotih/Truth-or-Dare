@@ -1,16 +1,17 @@
 import React from "react";
-import "./Bottle.css"; // Add this line
+import "./Bottle.css";
+import bottleImg from "../assets/bottle.png";
 
 const Bottle = ({ rotation }) => {
   return (
-    <div
+    <img
+      src={bottleImg}
+      alt="Bottle"
       className="bottle"
       style={{
         transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
       }}
-    >
-      🍼
-    </div>
+    />
   );
 };
 

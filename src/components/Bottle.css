@@ -1,7 +1,9 @@
 .bottle {
   position: absolute;
-  left: 50%;
   top: 50%;
-  font-size: 40px;
+  left: 50%;
+  width: 60px;
+  height: auto;
   transition: transform 3s ease-out;
+  z-index: 2;
 }
