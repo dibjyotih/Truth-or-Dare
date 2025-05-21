@@ -30,24 +30,8 @@ This app simulates a real-life party game using animations, fun visuals, and int
 
 ## 🧩 Component Structure
 
-src/
-│
-├── App.jsx # Routes between PlayerSetup and GameBoard
-├── assets/ # Images (bottle, background, favicon)
-├── components/
-│ ├── PlayerSetup.jsx # Number of players and name entry
-│ ├── GameBoard.jsx # Main game logic and layout
-│ ├── Bottle.jsx # Bottle component with rotation
-│
-├── data/
-│ ├── truthQuestions.js # List of truth questions
-│ ├── dareQuestions.js # List of dare challenges
-│
-├── styles/
-│ ├── GameBoard.css # Styling for the game board
-│ ├── PlayerSetup.css # Styling for player input
-│
-└── main.jsx # Entry point
+![image](https://github.com/user-attachments/assets/eef1fa5d-ef9c-4d7e-a4d9-a629fa9ed001)
+
 
 ---
 
