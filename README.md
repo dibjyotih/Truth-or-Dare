@@ -9,7 +9,6 @@ Players sit in a virtual circle, and a spinning bottle randomly selects one play
 ![image](https://github.com/user-attachments/assets/62e083fc-54c7-4127-ab80-c330f31f802e)
 
 
-> Upload a screenshot or screen recording here (optional)
 
 ---
 
