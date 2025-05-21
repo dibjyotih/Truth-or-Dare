@@ -39,7 +39,7 @@ This app simulates a real-life party game using animations, fun visuals, and int
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/truth-or-dare-game.git
+git clone https://github.com/dibjyotih/truth-or-dare-game.git
 
 # 2. Navigate into the project
 cd truth-or-dare-game
@@ -74,7 +74,6 @@ Then open http://localhost:5173 in your browser.
 ## 📁 Assets
 
 - `assets/bottle.png`: bottle image  
-- `assets/party-bg.jpg`: blurred background  
 - `assets/bar.png`: favicon (injected via React)  
 
 ---
