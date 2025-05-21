@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./PlayerSetup.css";
+import bgImage from "../assets/bar.png";
 
 const PlayerSetup = ({ onStart }) => {
   const [numPlayers, setNumPlayers] = useState(2);
@@ -24,38 +26,47 @@ const PlayerSetup = ({ onStart }) => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 mt-10">
+    <div
+      className="player-setup-container"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh",
+        overflow: "hidden"
+      }}
+    >
+      <h1 className="game-title">Truth or Dare</h1>
       {!submitted ? (
-        <form onSubmit={handleNumPlayersSubmit} className="flex flex-col gap-2">
-          <label className="text-xl font-semibold">How many players?</label>
+        <form onSubmit={handleNumPlayersSubmit} className="player-count-form">
+          <label className="form-label">How many players?</label>
           <input
             type="number"
             min="2"
             max="12"
             value={numPlayers}
             onChange={(e) => setNumPlayers(e.target.value)}
-            className="border px-2 py-1 rounded"
+            className="player-count-input"
           />
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded mt-2">
+          <button type="submit" className="player-count-button">
             Next
           </button>
         </form>
       ) : (
-        <div className="w-full max-w-md flex flex-col gap-3">
-          <h2 className="text-xl font-semibold text-center">Enter Player Names</h2>
-          {playerNames.map((name, index) => (
-            <input
-              key={index}
-              placeholder={`Player ${index + 1}`}
-              value={name}
-              onChange={(e) => handleNameChange(index, e.target.value)}
-              className="border px-3 py-2 rounded"
-            />
-          ))}
-          <button
-            onClick={handleStartGame}
-            className="bg-green-600 text-white py-2 rounded mt-4"
-          >
+        <div className="player-name-grid">
+          <h2 className="name-heading">Enter Player Names</h2>
+          <div className="grid">
+            {playerNames.map((name, index) => (
+              <input
+                key={index}
+                placeholder={`Player ${index + 1}`}
+                value={name}
+                onChange={(e) => handleNameChange(index, e.target.value)}
+                className="player-name-input"
+              />
+            ))}
+          </div>
+          <button onClick={handleStartGame} className="start-game-button">
             Start Game
           </button>
         </div>

@@ -3,6 +3,7 @@ import "./GameBoard.css";
 import Bottle from "./Bottle";
 import truthQuestions from "../data/truthQuestions";
 import dareQuestions from "../data/dareQuestions";
+import bgImage from "../assets/bar.png";
 
 const GameBoard = ({ players }) => {
   const [rotation, setRotation] = useState(0);
@@ -22,10 +23,8 @@ const GameBoard = ({ players }) => {
   const spinBottle = () => {
     const totalPlayers = players.length;
     const segmentAngle = 360 / totalPlayers;
-
     const askerIndex = Math.floor(Math.random() * totalPlayers);
     const angleToAsker = askerIndex * segmentAngle;
-
     const spinCount = 4;
     const targetAngle = 180 + angleToAsker;
     const fullSpins = spinCount * 360;
@@ -46,6 +45,8 @@ const GameBoard = ({ players }) => {
       setSelectedPair({
         asker: players[askerIndexFinal],
         answerer: players[answererIndex],
+        askerIndex: askerIndexFinal,
+        answererIndex: answererIndex,
       });
 
       setQuestion("");
@@ -58,19 +59,41 @@ const GameBoard = ({ players }) => {
   const centerX = 200;
   const centerY = 200;
 
+  const handleNewGame = () => {
+    window.location.reload();
+  };
+
   return (
-    <div className="game-wrapper">
+    <div
+      className="game-wrapper"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh",
+        overflow: "hidden"
+      }}
+    >
+      <div className="header">
+        <h1 className="game-title">    Truth or Dare</h1>
+        <button className="new-game-button" onClick={handleNewGame}>
+          New Game
+        </button>
+      </div>
 
       <div className="game-container">
-        <div className="circle">
+        <div className="circle" onClick={() => !spinning && !selectedPair && spinBottle()}>
           {players.map((player, index) => {
             const angle = (index / players.length) * 2 * Math.PI;
             const x = centerX + radius * Math.cos(angle);
             const y = centerY + radius * Math.sin(angle);
+            const isAsker = selectedPair && index === selectedPair.askerIndex;
+            const isAnswerer = selectedPair && index === selectedPair.answererIndex;
+
             return (
               <div
                 key={index}
-                className="player"
+                className={`player ${isAsker ? "asker" : ""} ${isAnswerer ? "answerer" : ""}`}
                 style={{
                   left: `${x}px`,
                   top: `${y}px`,
@@ -86,12 +109,6 @@ const GameBoard = ({ players }) => {
         </div>
 
         <div className="controls">
-          {!spinning && !selectedPair && (
-            <button className="spin-button" onClick={spinBottle}>
-              Spin
-            </button>
-          )}
-
           {selectedPair && !questionType && (
             <div className="result-box">
               <p>

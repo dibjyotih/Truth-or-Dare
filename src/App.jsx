@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>🎉 Truth or Dare Game 🎉</h1>
+    
       {players.length === 0 ? (
         <PlayerSetup onStart={setPlayers} />
       ) : (
