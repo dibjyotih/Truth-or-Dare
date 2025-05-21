@@ -1,8 +1,22 @@
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.game-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .game-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  gap: 16px;
 }
 
 .circle {
@@ -25,26 +39,38 @@
   transform: translate(-50%, -50%);
 }
 
-.spin-button {
-  position: absolute;
-  bottom: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #008cff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+.controls {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.result {
-  position: absolute;
-  bottom: -110px;
-  left: 50%;
-  transform: translateX(-50%);
+.spin-button,
+.continue-button,
+.truth-dare-buttons button {
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.truth-dare-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.result-box {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.question-text {
+  margin-top: 12px;
   font-size: 18px;
-  font-weight: 500;
-  color: #1e3a8a;
+  color: #111827;
 }
